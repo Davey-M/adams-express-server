@@ -4,7 +4,7 @@ const app = express();
 const port = 3000;
 
 // dir for static files
-app.use(express.static(__dirname + '/server/public'));
+app.use(express.static(__dirname + '/public'));
 
 app.listen(port, () => {
     try {
