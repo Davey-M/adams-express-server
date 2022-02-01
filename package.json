@@ -2,9 +2,10 @@
   "name": "adams-express-server",
   "version": "1.0.0",
   "description": "A server built with react for the full stack course at Prime Digital Academy",
-  "main": "index.js",
+  "main": "server/server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "echo \"starting server...\" && node ."
   },
   "repository": {
     "type": "git",
