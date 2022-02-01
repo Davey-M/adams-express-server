@@ -10,7 +10,11 @@ app.use(express.static(__dirname + "/public"));
 
 // route should be a noun and describe the data you are getting from it
 app.get('/quotes', (req, res) => {
-    res.send(quotes);
+    try {
+        res.send(quotes);
+    } catch (err) {
+        res.status(404).send(err);
+    }
 })
 
 app.listen(port, () => {

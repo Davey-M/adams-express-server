@@ -8,7 +8,7 @@ async function main() {
     for (let quote of quotes) {
         $('#quoteContainer').append(`
             <div>
-                <p>By: ${quote.author}</p>
+                <h3>By: ${quote.author}</h3>
                 <p>Quote: ${quote.text}</p>
             </div>
         `);
