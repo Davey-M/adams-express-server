@@ -13,7 +13,7 @@ app.get('/quotes', (req, res) => {
     try {
         res.send(quotes);
     } catch (err) {
-        res.status(404).send(err);
+        res.status(500).send(err);
     }
 })
 
