@@ -51,7 +51,10 @@ async function postNewQuote(e) {
     
         console.log(response);
 
-        asyncGetQuotes(``);
+        asyncGetQuotes();
+
+        form.text.value = '';
+        form.author.value = '';
 
     } catch(err) {
         console.log(err);
