@@ -26,9 +26,15 @@ app.get('/quotes', (req, res) => {
 })
 
 app.post('/quotes', (req, res) => {
-    // the data from the client is saved in req.body
-    console.log(req.body);
-    res.send(req.body);
+    try {
+        // the data from the client is saved in req.body
+
+        quotes.push(req.body);
+
+        res.send(req.body);
+    } catch (err) {
+        console.log(err);
+    }
 })
 
 app.listen(port, () => {
