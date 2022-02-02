@@ -74,8 +74,7 @@ function renderToDOM(quotes) {
     for (let quote of quotes) {
         $('#quoteContainer').append(`
             <div class="quote" >
-                <h3>By: ${quote.author}</h3>
-                <p>Quote: ${quote.text}</p>
+                <p>${quote.text}\n\n<i> - ${quote.author}</i></p>
             </div>
         `);
     }
