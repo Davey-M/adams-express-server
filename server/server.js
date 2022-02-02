@@ -1,12 +1,15 @@
 const express = require("express");
 const app = express();
 
+const bodyParser = require('body-parser');
+
 const port = 3000;
 
 const quotes = require('./modules/quotes');
 
 // dir for static files __dirname give the directory that server.js lives in
 app.use(express.static(__dirname + "/public"));
+app.use(bodyParser.urlencoded({ extended: true }));
 
 // route should be a noun and describe the data you are getting from it
 
@@ -20,6 +23,12 @@ app.get('/quotes', (req, res) => {
     } catch (err) {
         res.status(500).send(err);
     }
+})
+
+app.post('/quotes', (req, res) => {
+    // the data from the client is saved in req.body
+    console.log(req.body);
+    res.send(req.body);
 })
 
 app.listen(port, () => {

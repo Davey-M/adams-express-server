@@ -42,7 +42,7 @@ async function postNewQuote(e) {
 
         let response = await $.ajax({
             method: 'POST',
-            url: '/newQuote',
+            url: '/quotes',
             data: {
                 text: form.text.value,
                 author: form.author.value,
