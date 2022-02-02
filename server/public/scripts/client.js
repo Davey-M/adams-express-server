@@ -29,6 +29,33 @@ function onReady() {
 
     // getQuotes();
     asyncGetQuotes();
+
+    $('#inputForm').on('submit', postNewQuote);
+}
+
+async function postNewQuote(e) {
+    e.preventDefault();
+
+    let form = e.target;
+
+    try {
+
+        let response = await $.ajax({
+            method: 'POST',
+            url: '/newQuote',
+            data: {
+                text: form.text.value,
+                author: form.author.value,
+            },
+        });
+    
+        console.log(response);
+
+        asyncGetQuotes();
+
+    } catch(err) {
+        console.log(err);
+    }
 }
 
 function getQuotes() {
@@ -70,6 +97,8 @@ async function asyncGetQuotes() {
 }
 
 function renderToDOM(quotes) {
+
+    $('#quoteContainer').empty();
 
     for (let quote of quotes) {
         $('#quoteContainer').append(`
