@@ -5,7 +5,7 @@ const port = 3000;
 
 const quotes = require('./modules/quotes');
 
-// dir for static files
+// dir for static files __dirname give the directory that server.js lives in
 app.use(express.static(__dirname + "/public"));
 
 // route should be a noun and describe the data you are getting from it
