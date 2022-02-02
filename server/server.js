@@ -29,11 +29,20 @@ app.post('/quotes', (req, res) => {
     try {
         // the data from the client is saved in req.body
 
-        quotes.push(req.body);
+        let newQuote = {
+            text: req.body.text.toString(),
+            author: req.body.author.toString(),
+        }
+        
+        console.log(newQuote);
+        quotes.push(newQuote);
 
-        res.send(req.body);
+        res.sendStatus(201);
     } catch (err) {
         console.log(err);
+        res.send({
+            issue: err,
+        });
     }
 })
 
