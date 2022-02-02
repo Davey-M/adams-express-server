@@ -61,25 +61,26 @@ async function postNewQuote(e) {
     }
 }
 
-function getQuotes() {
-    // get quotes from the server with JQuery
+// unnecessary code:
+// function getQuotes() {
+//     // get quotes from the server with JQuery
 
-    $.ajax({
-        method: 'GET',
-        url: '/quotes',
-    }).then(quotes => {
-        for (let quote of quotes) {
-            $('#quoteContainer').append(`
-                <div>
-                    <h3>By: ${quote.author}</h3>
-                    <p>Quote: ${quote.text}</p>
-                </div>
-            `);
-        }
-    }).catch(err => {
-        console.log(err)
-    })
-}
+//     $.ajax({
+//         method: 'GET',
+//         url: '/quotes',
+//     }).then(quotes => {
+//         for (let quote of quotes) {
+//             $('#quoteContainer').append(`
+//                 <div>
+//                     <h3>By: ${quote.author}</h3>
+//                     <p>Quote: ${quote.text}</p>
+//                 </div>
+//             `);
+//         }
+//     }).catch(err => {
+//         console.log(err)
+//     })
+// }
 
 async function asyncGetQuotes() {
 
