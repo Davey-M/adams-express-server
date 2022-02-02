@@ -22,7 +22,7 @@
 //     return quotes;
 // }
 
-$(onReady)
+$(onReady);
 
 function onReady() {
     console.log('JS & JQuery');
