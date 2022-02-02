@@ -51,7 +51,7 @@ async function postNewQuote(e) {
     
         console.log(response);
 
-        asyncGetQuotes();
+        asyncGetQuotes(``);
 
     } catch(err) {
         console.log(err);

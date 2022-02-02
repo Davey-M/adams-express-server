@@ -22,11 +22,6 @@ app.get('/quotes', (req, res) => {
     }
 })
 
-app.post('/newQuote', (req, res) => {
-    console.log(req);
-    res.send(req.data);
-})
-
 app.listen(port, () => {
 	try {
 		console.log(`App hosted on localhost:${port}`);
